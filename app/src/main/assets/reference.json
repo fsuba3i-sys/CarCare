@@ -1,0 +1,920 @@
+{
+ "version": 1,
+ "updated": "2026-10-05",
+ "items": [
+  {
+   "id": "engine_oil",
+   "en": "Engine oil & filter",
+   "ar": "زيت المكينة والفلتر"
+  },
+  {
+   "id": "tire_rotation",
+   "en": "Tire rotation",
+   "ar": "تدوير الكفرات"
+  },
+  {
+   "id": "air_filter",
+   "en": "Engine air filter",
+   "ar": "فلتر هواء المكينة"
+  },
+  {
+   "id": "cabin_filter",
+   "en": "Cabin (A/C) filter",
+   "ar": "فلتر المكيف"
+  },
+  {
+   "id": "atf",
+   "en": "Transmission fluid (ATF)",
+   "ar": "زيت القير"
+  },
+  {
+   "id": "transfer_oil",
+   "en": "Transfer case oil",
+   "ar": "زيت علبة التوزيعة"
+  },
+  {
+   "id": "diff_oil",
+   "en": "Differential oil",
+   "ar": "زيت الدفرنس"
+  },
+  {
+   "id": "brake_fluid",
+   "en": "Brake fluid",
+   "ar": "زيت الفرامل"
+  },
+  {
+   "id": "coolant",
+   "en": "Engine coolant",
+   "ar": "ماء الردياتير"
+  },
+  {
+   "id": "spark_plugs",
+   "en": "Spark plugs",
+   "ar": "البواجي"
+  },
+  {
+   "id": "timing_belt",
+   "en": "Timing belt",
+   "ar": "سير التايمنق"
+  }
+ ],
+ "sources": {
+  "s_jmp": {
+   "title": "Toyota KSA – Jameel Maintenance Program",
+   "url": "https://www.toyota.com.sa/en/offers/jmp"
+  },
+  "s_4runner": {
+   "title": "Toyota 4Runner maintenance schedule (GarageHub)",
+   "url": "https://getgaragehub.com/learn/vehicles/toyota-4runner-maintenance-schedule/"
+  },
+  "s_gm_hd": {
+   "title": "Silverado 2500 HD maintenance schedule (House Chevrolet)",
+   "url": "https://www.housechevroletowatonna.com/helpful-resources/silverado-2500-maintenance-schedule.html"
+  },
+  "s_gm_silverado": {
+   "title": "Silverado maintenance schedule (ChevroletForum)",
+   "url": "https://chevroletforum.com/how-tos/a/chevrolet-silverado-2014-present-general-information-and-maintenance-schedule-389114"
+  },
+  "s_mmal_nx": {
+   "title": "Mitsubishi Motors Australia – NX Pajero inspection & maintenance schedule",
+   "url": "https://s3-ap-southeast-2.amazonaws.com/imotor-cms/files_cms/pajero-MY20.pdf"
+  },
+  "s_pajero_life": {
+   "title": "Pajero maintenance schedule (Pajero 4x4 Life)",
+   "url": "https://mitsubishipajero4x4life.com/pajero-maintenance-schedule/"
+  }
+ },
+ "schedules": {
+  "generic_jp": {
+   "en": "General Japanese schedule (hot/dusty)",
+   "ar": "جدول ياباني عام (حرارة وغبار)",
+   "items": [
+    {
+     "item": "engine_oil",
+     "km": 8000,
+     "months": 6,
+     "conf": "secondary",
+     "src": "s_4runner"
+    },
+    {
+     "item": "tire_rotation",
+     "km": 8000,
+     "months": 6,
+     "conf": "secondary",
+     "src": "s_4runner"
+    },
+    {
+     "item": "air_filter",
+     "km": 24000,
+     "months": 24,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "cabin_filter",
+     "km": 24000,
+     "months": 24,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "atf",
+     "km": 72000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_4runner"
+    },
+    {
+     "item": "transfer_oil",
+     "km": 48000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_4runner"
+    },
+    {
+     "item": "diff_oil",
+     "km": 48000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_4runner"
+    },
+    {
+     "item": "brake_fluid",
+     "km": 72000,
+     "months": 36,
+     "conf": "secondary",
+     "src": "s_4runner"
+    },
+    {
+     "item": "coolant",
+     "km": 160000,
+     "months": 120,
+     "conf": "secondary",
+     "src": "s_4runner"
+    },
+    {
+     "item": "spark_plugs",
+     "km": 145000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_4runner"
+    }
+   ]
+  },
+  "generic_us": {
+   "en": "General American schedule (hot/dusty)",
+   "ar": "جدول أمريكي عام (حرارة وغبار)",
+   "items": [
+    {
+     "item": "engine_oil",
+     "km": 12000,
+     "months": 12,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "tire_rotation",
+     "km": 12000,
+     "months": 12,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "air_filter",
+     "km": 36000,
+     "months": 24,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "cabin_filter",
+     "km": 36000,
+     "months": 24,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "atf",
+     "km": 72000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "transfer_oil",
+     "km": 157000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "diff_oil",
+     "km": 72000,
+     "months": 0,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "brake_fluid",
+     "km": 72000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "coolant",
+     "km": 240000,
+     "months": 60,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "spark_plugs",
+     "km": 157000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    }
+   ]
+  },
+  "lc300_v35a": {
+   "en": "Land Cruiser 300 – 3.5L V6 twin-turbo",
+   "ar": "لاندكروزر 300 – 3.5 V6 تيربو",
+   "items": [
+    {
+     "item": "engine_oil",
+     "km": 10000,
+     "months": 12,
+     "conf": "official",
+     "src": "s_jmp"
+    },
+    {
+     "item": "tire_rotation",
+     "km": 10000,
+     "months": 12,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "air_filter",
+     "km": 20000,
+     "months": 24,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "cabin_filter",
+     "km": 20000,
+     "months": 12,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "atf",
+     "km": 80000,
+     "months": 0,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "transfer_oil",
+     "km": 40000,
+     "months": 0,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "diff_oil",
+     "km": 40000,
+     "months": 0,
+     "conf": "official",
+     "src": "s_jmp"
+    },
+    {
+     "item": "brake_fluid",
+     "km": 40000,
+     "months": 24,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "coolant",
+     "km": 160000,
+     "months": 120,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "spark_plugs",
+     "km": 100000,
+     "months": 0,
+     "conf": "official",
+     "src": "s_jmp"
+    }
+   ]
+  },
+  "sierra_hd_gmt900_gas": {
+   "en": "Sierra HD 2007–2014 – 6.0L V8 gas",
+   "ar": "سييرا HD 2007–2014 – 6.0 V8 بنزين",
+   "items": [
+    {
+     "item": "engine_oil",
+     "km": 12000,
+     "months": 12,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "tire_rotation",
+     "km": 12000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "air_filter",
+     "km": 36000,
+     "months": 0,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "cabin_filter",
+     "km": 36000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "atf",
+     "km": 72000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_silverado"
+    },
+    {
+     "item": "transfer_oil",
+     "km": 157000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "diff_oil",
+     "km": 72000,
+     "months": 0,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "brake_fluid",
+     "km": 72000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "coolant",
+     "km": 240000,
+     "months": 60,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    },
+    {
+     "item": "spark_plugs",
+     "km": 157000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_gm_hd"
+    }
+   ]
+  },
+  "pajero_gen4_v6": {
+   "en": "Pajero 2007–2021 – petrol V6",
+   "ar": "باجيرو 2007–2021 – V6 بنزين",
+   "items": [
+    {
+     "item": "engine_oil",
+     "km": 7500,
+     "months": 6,
+     "conf": "official",
+     "src": "s_mmal_nx"
+    },
+    {
+     "item": "tire_rotation",
+     "km": 10000,
+     "months": 0,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "air_filter",
+     "km": 15000,
+     "months": 12,
+     "conf": "official",
+     "src": "s_mmal_nx"
+    },
+    {
+     "item": "cabin_filter",
+     "km": 15000,
+     "months": 12,
+     "conf": "estimated",
+     "src": ""
+    },
+    {
+     "item": "atf",
+     "km": 90000,
+     "months": 0,
+     "conf": "official",
+     "src": "s_mmal_nx"
+    },
+    {
+     "item": "transfer_oil",
+     "km": 40000,
+     "months": 24,
+     "conf": "secondary",
+     "src": "s_pajero_life"
+    },
+    {
+     "item": "diff_oil",
+     "km": 40000,
+     "months": 24,
+     "conf": "secondary",
+     "src": "s_pajero_life"
+    },
+    {
+     "item": "brake_fluid",
+     "km": 0,
+     "months": 24,
+     "conf": "secondary",
+     "src": "s_pajero_life"
+    },
+    {
+     "item": "coolant",
+     "km": 0,
+     "months": 24,
+     "conf": "secondary",
+     "src": "s_pajero_life"
+    },
+    {
+     "item": "spark_plugs",
+     "km": 20000,
+     "months": 0,
+     "conf": "secondary",
+     "src": "s_pajero_life"
+    },
+    {
+     "item": "timing_belt",
+     "km": 100000,
+     "months": 60,
+     "conf": "estimated",
+     "src": ""
+    }
+   ]
+  }
+ },
+ "brands": [
+  {
+   "id": "toyota",
+   "en": "Toyota",
+   "ar": "تويوتا",
+   "schedule": "generic_jp",
+   "models": [
+    {
+     "id": "yaris",
+     "en": "Yaris",
+     "ar": "يارس"
+    },
+    {
+     "id": "corolla",
+     "en": "Corolla",
+     "ar": "كورولا"
+    },
+    {
+     "id": "camry",
+     "en": "Camry",
+     "ar": "كامري"
+    },
+    {
+     "id": "avalon",
+     "en": "Avalon",
+     "ar": "أفالون"
+    },
+    {
+     "id": "crown",
+     "en": "Crown",
+     "ar": "كراون"
+    },
+    {
+     "id": "prius",
+     "en": "Prius",
+     "ar": "بريوس"
+    },
+    {
+     "id": "rav4",
+     "en": "RAV4",
+     "ar": "راف فور"
+    },
+    {
+     "id": "corolla_cross",
+     "en": "Corolla Cross",
+     "ar": "كورولا كروس"
+    },
+    {
+     "id": "chr",
+     "en": "C-HR",
+     "ar": "C-HR"
+    },
+    {
+     "id": "highlander",
+     "en": "Highlander",
+     "ar": "هايلاندر"
+    },
+    {
+     "id": "fortuner",
+     "en": "Fortuner",
+     "ar": "فورتشنر"
+    },
+    {
+     "id": "prado",
+     "en": "Land Cruiser Prado",
+     "ar": "برادو"
+    },
+    {
+     "id": "land_cruiser",
+     "en": "Land Cruiser",
+     "ar": "لاندكروزر",
+     "gens": [
+      {
+       "id": "lc100",
+       "en": "100 Series",
+       "ar": "الجيل 100",
+       "from": 2006,
+       "to": 2007
+      },
+      {
+       "id": "lc200",
+       "en": "200 Series",
+       "ar": "الجيل 200",
+       "from": 2008,
+       "to": 2021
+      },
+      {
+       "id": "lc300",
+       "en": "300 Series",
+       "ar": "الجيل 300",
+       "from": 2022,
+       "to": null,
+       "engines": [
+        {
+         "id": "v35a",
+         "en": "3.5L V6 Twin-Turbo (V35A)",
+         "ar": "3.5 V6 تيربو مزدوج (V35A)",
+         "schedule": "lc300_v35a"
+        },
+        {
+         "id": "1gr",
+         "en": "4.0L V6 (1GR-FE)",
+         "ar": "4.0 V6 (1GR-FE)",
+         "schedule": "generic_jp"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lc70",
+     "en": "Land Cruiser 70 / Pickup",
+     "ar": "لاندكروزر 70 / شاص"
+    },
+    {
+     "id": "fj",
+     "en": "FJ Cruiser",
+     "ar": "إف جي"
+    },
+    {
+     "id": "sequoia",
+     "en": "Sequoia",
+     "ar": "سيكويا"
+    },
+    {
+     "id": "tundra",
+     "en": "Tundra",
+     "ar": "تندرا"
+    },
+    {
+     "id": "hilux",
+     "en": "Hilux",
+     "ar": "هايلكس"
+    },
+    {
+     "id": "hiace",
+     "en": "Hiace",
+     "ar": "هايس"
+    },
+    {
+     "id": "innova",
+     "en": "Innova",
+     "ar": "إنوفا"
+    },
+    {
+     "id": "avanza",
+     "en": "Avanza",
+     "ar": "أفانزا"
+    },
+    {
+     "id": "rush",
+     "en": "Rush",
+     "ar": "رش"
+    },
+    {
+     "id": "raize",
+     "en": "Raize",
+     "ar": "رايز"
+    },
+    {
+     "id": "veloz",
+     "en": "Veloz",
+     "ar": "فيلوز"
+    },
+    {
+     "id": "granvia",
+     "en": "Granvia",
+     "ar": "جرانفيا"
+    }
+   ]
+  },
+  {
+   "id": "mitsubishi",
+   "en": "Mitsubishi",
+   "ar": "ميتسوبيشي",
+   "schedule": "generic_jp",
+   "models": [
+    {
+     "id": "lancer",
+     "en": "Lancer",
+     "ar": "لانسر"
+    },
+    {
+     "id": "attrage",
+     "en": "Attrage",
+     "ar": "أتراج"
+    },
+    {
+     "id": "mirage",
+     "en": "Mirage",
+     "ar": "ميراج"
+    },
+    {
+     "id": "xpander",
+     "en": "Xpander",
+     "ar": "إكسباندر"
+    },
+    {
+     "id": "asx",
+     "en": "ASX",
+     "ar": "ASX"
+    },
+    {
+     "id": "outlander",
+     "en": "Outlander",
+     "ar": "أوتلاندر"
+    },
+    {
+     "id": "eclipse_cross",
+     "en": "Eclipse Cross",
+     "ar": "إكلبس كروس"
+    },
+    {
+     "id": "pajero",
+     "en": "Pajero",
+     "ar": "باجيرو",
+     "gens": [
+      {
+       "id": "gen3",
+       "en": "3rd gen",
+       "ar": "الجيل الثالث",
+       "from": 2006,
+       "to": 2006
+      },
+      {
+       "id": "gen4",
+       "en": "4th gen",
+       "ar": "الجيل الرابع",
+       "from": 2007,
+       "to": 2021,
+       "engines": [
+        {
+         "id": "6g72",
+         "en": "3.0L V6 (6G72)",
+         "ar": "3.0 V6 (6G72)",
+         "schedule": "pajero_gen4_v6"
+        },
+        {
+         "id": "6g74",
+         "en": "3.5L V6 (6G74)",
+         "ar": "3.5 V6 (6G74)",
+         "schedule": "pajero_gen4_v6"
+        },
+        {
+         "id": "6g75",
+         "en": "3.8L V6 (6G75)",
+         "ar": "3.8 V6 (6G75)",
+         "schedule": "pajero_gen4_v6"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "pajero_sport",
+     "en": "Pajero Sport / Montero Sport",
+     "ar": "باجيرو سبورت"
+    },
+    {
+     "id": "nativa",
+     "en": "Nativa",
+     "ar": "ناتيفا"
+    },
+    {
+     "id": "l200",
+     "en": "L200 / Triton",
+     "ar": "L200 / ترايتون"
+    }
+   ]
+  },
+  {
+   "id": "gmc",
+   "en": "GMC",
+   "ar": "جمس",
+   "schedule": "generic_us",
+   "models": [
+    {
+     "id": "sierra_1500",
+     "en": "Sierra 1500",
+     "ar": "سييرا 1500"
+    },
+    {
+     "id": "sierra_hd",
+     "en": "Sierra HD (2500/3500)",
+     "ar": "سييرا HD (2500/3500)",
+     "gens": [
+      {
+       "id": "gmt900",
+       "en": "GMT900",
+       "ar": "GMT900",
+       "from": 2007,
+       "to": 2014,
+       "engines": [
+        {
+         "id": "6.0",
+         "en": "6.0L V8 gas (Vortec)",
+         "ar": "6.0 V8 بنزين",
+         "schedule": "sierra_hd_gmt900_gas"
+        },
+        {
+         "id": "6.6d",
+         "en": "6.6L V8 Duramax diesel",
+         "ar": "6.6 V8 ديزل دوراماكس",
+         "schedule": "generic_us"
+        }
+       ]
+      },
+      {
+       "id": "k2",
+       "en": "K2XX",
+       "ar": "K2XX",
+       "from": 2015,
+       "to": 2019
+      },
+      {
+       "id": "t1",
+       "en": "T1XX",
+       "ar": "T1XX",
+       "from": 2020,
+       "to": null
+      }
+     ]
+    },
+    {
+     "id": "yukon",
+     "en": "Yukon / Yukon XL",
+     "ar": "يوكن / يوكن XL"
+    },
+    {
+     "id": "acadia",
+     "en": "Acadia",
+     "ar": "أكاديا"
+    },
+    {
+     "id": "terrain",
+     "en": "Terrain",
+     "ar": "تيرين"
+    },
+    {
+     "id": "canyon",
+     "en": "Canyon",
+     "ar": "كانيون"
+    },
+    {
+     "id": "savana",
+     "en": "Savana",
+     "ar": "سافانا"
+    },
+    {
+     "id": "envoy",
+     "en": "Envoy",
+     "ar": "إنفوي"
+    }
+   ]
+  },
+  {
+   "id": "ford",
+   "en": "Ford",
+   "ar": "فورد",
+   "schedule": "generic_us",
+   "models": [
+    {
+     "id": "fusion",
+     "en": "Fusion",
+     "ar": "فيوجن"
+    },
+    {
+     "id": "taurus",
+     "en": "Taurus",
+     "ar": "توروس"
+    },
+    {
+     "id": "five_hundred",
+     "en": "Five Hundred",
+     "ar": "فايف هندرد"
+    },
+    {
+     "id": "crown_victoria",
+     "en": "Crown Victoria",
+     "ar": "كراون فكتوريا"
+    },
+    {
+     "id": "mustang",
+     "en": "Mustang",
+     "ar": "موستنج"
+    },
+    {
+     "id": "escape",
+     "en": "Escape",
+     "ar": "إسكيب"
+    },
+    {
+     "id": "edge",
+     "en": "Edge",
+     "ar": "إيدج"
+    },
+    {
+     "id": "territory",
+     "en": "Territory",
+     "ar": "تيريتوري"
+    },
+    {
+     "id": "flex",
+     "en": "Flex",
+     "ar": "فليكس"
+    },
+    {
+     "id": "explorer",
+     "en": "Explorer",
+     "ar": "إكسبلورر"
+    },
+    {
+     "id": "expedition",
+     "en": "Expedition",
+     "ar": "إكسبيدشن"
+    },
+    {
+     "id": "everest",
+     "en": "Everest",
+     "ar": "إيفرست"
+    },
+    {
+     "id": "bronco",
+     "en": "Bronco",
+     "ar": "برونكو"
+    },
+    {
+     "id": "ranger",
+     "en": "Ranger",
+     "ar": "رينجر"
+    },
+    {
+     "id": "f150",
+     "en": "F-150",
+     "ar": "F-150"
+    },
+    {
+     "id": "super_duty",
+     "en": "Super Duty (F-250/F-350)",
+     "ar": "سوبر ديوتي (F-250/F-350)"
+    }
+   ]
+  }
+ ]
+}

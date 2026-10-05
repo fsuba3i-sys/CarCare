@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Launcher icon: teal car silhouette with a white wrench -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- car body -->
+    <path
+        android:fillColor="#3DB8A5"
+        android:pathData="M30,58 L36,44 Q38,40 43,40 L65,40 Q70,40 72,44 L78,58 Q81,59 81,62 L81,68 Q81,70 79,70 L29,70 Q27,70 27,68 L27,62 Q27,59 30,58 Z" />
+    <!-- windows -->
+    <path
+        android:fillColor="#14191D"
+        android:pathData="M37,56 L41,46 Q42,44 44,44 L52,44 L52,56 Z M56,44 L64,44 Q66,44 67,46 L71,56 L56,56 Z" />
+    <!-- wheels -->
+    <path
+        android:fillColor="#E9EDF1"
+        android:pathData="M38,70 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0 M70,70 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+</vector>
