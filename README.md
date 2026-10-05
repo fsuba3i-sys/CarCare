@@ -16,3 +16,7 @@ Android app to track maintenance and repairs for your cars (Arabic / English, da
 ## Build
 
 GitHub Actions builds the debug APK on every push and publishes it to the `apk` branch (`CarCare.apk`).
+
+## Backlog (agreed, not yet built)
+
+- **Auto-apply library updates to existing cars:** after a library update, replace every schedule item whose `confidence` is not `"user"` with the library value for the same item, add new library items, keep user-edited items. Bump `versionCode` (currently 2) / `versionName` (currently 1.1).
