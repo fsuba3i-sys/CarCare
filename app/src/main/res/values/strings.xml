@@ -141,4 +141,12 @@
     <string name="col_desc">Description</string>
     <string name="col_items">Items</string>
     <string name="col_cost">Cost (SAR)</string>
+    <string name="oil_name">Oil brand / type</string>
+    <string name="oil_name_hint">e.g. Mobil 1, Castrol Edge</string>
+    <string name="oil_grade">Oil grade (viscosity)</string>
+    <string name="oil_grade_hint">e.g. 5W-30</string>
+    <string name="oil_used">Oil used</string>
+    <string name="oil_recommended">Recommended</string>
+    <string name="liters">%1$s L</string>
+    <string name="col_oil">Oil</string>
 </resources>

@@ -40,6 +40,9 @@ class EntryActivity : Activity() {
     private lateinit var costField: EditText
     private lateinit var itemsValue: TextView
     private lateinit var photoBox: LinearLayout
+    private lateinit var oilSection: LinearLayout
+    private lateinit var oilNameField: EditText
+    private lateinit var oilGradeField: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +84,36 @@ class EntryActivity : Activity() {
         itemsValue = iv
         root.add(iRow, lp(top = dp(6)))
         root.add(label(getString(R.string.items_done_hint), 12f, C.MUTED), lp(top = dp(4)))
+
+        // Oil details (shown only when engine oil is among the items done)
+        val lastOil = Store.entries(this, car.id).firstOrNull { "engine_oil" in it.items && it.id != e?.id }
+        val spec = Reference.schedule(this, car.scheduleKey)?.oil
+        oilSection = vertical()
+        oilSection.add(sectionTitle(getString(R.string.oil_name)), lp(top = dp(14)))
+        oilNameField = field(getString(R.string.oil_name_hint), e?.oilName ?: lastOil?.oilName ?: "")
+        oilSection.add(oilNameField, lp(top = dp(6)))
+        oilSection.add(sectionTitle(getString(R.string.oil_grade)), lp(top = dp(14)))
+        val gradeDefault = e?.oilGrade ?: lastOil?.oilGrade?.ifEmpty { null } ?: spec?.grade ?: ""
+        oilGradeField = field(getString(R.string.oil_grade_hint), gradeDefault).apply {
+            inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS
+        }
+        oilSection.add(oilGradeField, lp(top = dp(6)))
+        val gradeChips = horizontal()
+        listOf("0W-20", "5W-30", "5W-40", "10W-40", "20W-50").forEach { g ->
+            gradeChips.add(label(g, 13f, C.TEXT, bold = true).apply {
+                background = roundRect(C.SURFACE2, dp(10).toFloat())
+                setPadding(dp(10), dp(6), dp(10), dp(6))
+                setOnClickListener { oilGradeField.setText(g) }
+            }, LinearLayout.LayoutParams(WRAP, WRAP).apply { marginEnd = dp(6) })
+        }
+        oilSection.add(android.widget.HorizontalScrollView(this).apply {
+            isHorizontalScrollBarEnabled = false
+            addView(gradeChips)
+        }, lp(top = dp(8)))
+        if (spec != null && (spec.grade.isNotEmpty() || spec.liters > 0)) {
+            oilSection.add(label(recommendedText(spec), 12f, C.ACCENT), lp(top = dp(6)))
+        }
+        root.add(oilSection)
         renderItems()
 
         root.add(sectionTitle(getString(R.string.photo)), lp(top = dp(14)))
@@ -138,6 +171,17 @@ class EntryActivity : Activity() {
 
     private fun renderItems() {
         itemsValue.text = if (items.isEmpty()) getString(R.string.none) else items.size.toString()
+        if (::oilSection.isInitialized) {
+            oilSection.visibility = if ("engine_oil" in items) android.view.View.VISIBLE else android.view.View.GONE
+        }
+    }
+
+    private fun recommendedText(spec: Reference.OilSpec): String {
+        val parts = mutableListOf<String>()
+        if (spec.grade.isNotEmpty()) parts += spec.grade
+        if (spec.spec.isNotEmpty()) parts += spec.spec
+        if (spec.liters > 0) parts += getString(R.string.liters, Fmt.money(spec.liters))
+        return getString(R.string.oil_recommended) + ": " + parts.joinToString(" · ")
     }
 
     // ---------- Photo ----------
@@ -238,7 +282,9 @@ class EntryActivity : Activity() {
             desc = desc,
             cost = cost,
             items = items.toList(),
-            photo = photo
+            photo = photo,
+            oilName = if ("engine_oil" in items) oilNameField.text.toString().trim() else "",
+            oilGrade = if ("engine_oil" in items) oilGradeField.text.toString().trim().uppercase() else ""
         )
         Store.upsertEntry(this, entry)
         finish()

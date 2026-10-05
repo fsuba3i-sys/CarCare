@@ -28,7 +28,10 @@ object Reference {
     data class Gen(val id: String, val name: Name, val from: Int, val to: Int?, val engines: List<Engine>)
     data class Model(val id: String, val name: Name, val gens: List<Gen>)
     data class Brand(val id: String, val name: Name, val models: List<Model>)
-    data class Schedule(val key: String, val name: Name, val note: Name?, val items: List<SchedItem>)
+    /** Recommended engine oil for a schedule (any field may be empty when no source was found). */
+    data class OilSpec(val grade: String, val spec: String, val liters: Double, val source: String, val confidence: String)
+
+    data class Schedule(val key: String, val name: Name, val note: Name?, val items: List<SchedItem>, val oil: OilSpec?)
 
     data class Lib(
         val version: Int,
@@ -89,7 +92,10 @@ object Reference {
             val arr = o.getJSONArray("items")
             val list = (0 until arr.length()).map { SchedItem.fromJson(arr.getJSONObject(it)) }
             val note = o.optJSONObject("note")?.let { name(it) }
-            schedules[k] = Schedule(k, name(o), note, list)
+            val oil = o.optJSONObject("oil")?.let {
+                OilSpec(it.optString("grade"), it.optString("spec"), it.optDouble("liters", 0.0), it.optString("src"), it.optString("conf"))
+            }
+            schedules[k] = Schedule(k, name(o), note, list, oil)
         }
 
         val brands = mutableListOf<Brand>()

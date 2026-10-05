@@ -1,5 +1,5 @@
 {
- "version": 1,
+ "version": 2,
  "updated": "2026-10-05",
  "items": [
   {
@@ -78,6 +78,18 @@
   "s_mmal_nx": {
    "title": "Mitsubishi Motors Australia – NX Pajero inspection & maintenance schedule",
    "url": "https://s3-ap-southeast-2.amazonaws.com/imotor-cms/files_cms/pajero-MY20.pdf"
+  },
+  "s_tc_lc300": {
+   "title": "Toyota-Club.net – Land Cruiser 300 fluids & capacities",
+   "url": "https://toyota-club.net/files/techdata/ttx/lc_300w.htm"
+  },
+  "s_costa_sierra": {
+   "title": "2011 Sierra 2500 HD 6.0L oil guide (Costa Oil)",
+   "url": "https://costaoils.com/2011-gmc-sierra-2500-hd-pickup-6-0l-oil-change-guide/"
+  },
+  "s_oilinfo_pajero": {
+   "title": "Mitsubishi Pajero engine oil capacity (oil-change.info)",
+   "url": "https://oil-change.info/mitsubishi-pajero-engine-oil-capacity/"
   },
   "s_pajero_life": {
    "title": "Pajero maintenance schedule (Pajero 4x4 Life)",
@@ -311,7 +323,14 @@
      "conf": "official",
      "src": "s_jmp"
     }
-   ]
+   ],
+   "oil": {
+    "grade": "",
+    "spec": "API SP / ILSAC GF-6A",
+    "liters": 7.3,
+    "src": "s_tc_lc300",
+    "conf": "secondary"
+   }
   },
   "sierra_hd_gmt900_gas": {
    "en": "Sierra HD 2007–2014 – 6.0L V8 gas",
@@ -387,7 +406,14 @@
      "conf": "secondary",
      "src": "s_gm_hd"
     }
-   ]
+   ],
+   "oil": {
+    "grade": "5W-30",
+    "spec": "dexos1",
+    "liters": 5.7,
+    "src": "s_costa_sierra",
+    "conf": "secondary"
+   }
   },
   "pajero_gen4_v6": {
    "en": "Pajero 2007–2021 – petrol V6",
@@ -470,7 +496,14 @@
      "conf": "estimated",
      "src": ""
     }
-   ]
+   ],
+   "oil": {
+    "grade": "",
+    "spec": "",
+    "liters": 4.9,
+    "src": "s_oilinfo_pajero",
+    "conf": "secondary"
+   }
   }
  },
  "brands": [

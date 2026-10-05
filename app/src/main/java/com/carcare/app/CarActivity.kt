@@ -85,6 +85,18 @@ class CarActivity : Activity() {
                 c.add(kv(getString(R.string.driven_since), Fmt.km(maxOf(0, car.odometer - oil.lastKm)) + " " + getString(R.string.km)), lp(top = dp(4)))
                 c.add(kv(getString(R.string.next_change), Due.target(this, oil)), lp(top = dp(4)))
             }
+            val lastOil = entries.firstOrNull { "engine_oil" in it.items }
+            if (lastOil != null && (lastOil.oilName.isNotEmpty() || lastOil.oilGrade.isNotEmpty())) {
+                val used = listOf(lastOil.oilName, lastOil.oilGrade).filter { it.isNotEmpty() }.joinToString(" · ")
+                c.add(kv(getString(R.string.oil_used), used), lp(top = dp(4)))
+            }
+            Reference.schedule(this, car.scheduleKey)?.oil?.let { spec ->
+                val parts = mutableListOf<String>()
+                if (spec.grade.isNotEmpty()) parts += spec.grade
+                if (spec.spec.isNotEmpty()) parts += spec.spec
+                if (spec.liters > 0) parts += getString(R.string.liters, Fmt.money(spec.liters))
+                if (parts.isNotEmpty()) c.add(kv(getString(R.string.oil_recommended), parts.joinToString(" · ")), lp(top = dp(4)))
+            }
             c.add(label(Due.describe(this, oil), 15f, Due.color(oil.state), bold = true), lp(top = dp(10)))
             root.add(c, lp(top = dp(12)))
         }
@@ -158,6 +170,8 @@ class CarActivity : Activity() {
         if (e.items.isNotEmpty()) {
             texts.add(label(e.items.joinToString("، ") { Reference.itemName(this, it) }, 12f, C.ACCENT))
         }
+        val oilText = listOf(e.oilName, e.oilGrade).filter { it.isNotEmpty() }.joinToString(" · ")
+        if (oilText.isNotEmpty()) texts.add(label(oilText, 12f, C.MUTED))
         row.add(texts, LinearLayout.LayoutParams(0, WRAP, 1f))
         row.add(label(Fmt.money(e.cost), 16f, C.TEXT, bold = true).apply { typeface = Typeface.DEFAULT_BOLD }, LinearLayout.LayoutParams(WRAP, WRAP))
         return row

@@ -141,4 +141,12 @@
     <string name="col_desc">الوصف</string>
     <string name="col_items">البنود</string>
     <string name="col_cost">التكلفة (ريال)</string>
+    <string name="oil_name">نوع الزيت</string>
+    <string name="oil_name_hint">مثلاً: Mobil 1، Castrol Edge</string>
+    <string name="oil_grade">رقم الزيت (اللزوجة)</string>
+    <string name="oil_grade_hint">مثلاً: 5W-30</string>
+    <string name="oil_used">الزيت المستخدم</string>
+    <string name="oil_recommended">الموصى به</string>
+    <string name="liters">%1$s لتر</string>
+    <string name="col_oil">الزيت</string>
 </resources>

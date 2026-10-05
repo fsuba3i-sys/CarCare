@@ -102,12 +102,15 @@ data class Entry(
     val desc: String,
     val cost: Double,
     val items: List<String>,   // schedule items this entry completes (e.g. engine_oil)
-    val photo: String?         // file name inside files/photos
+    val photo: String?,        // file name inside files/photos
+    val oilName: String = "",  // e.g. Mobil 1
+    val oilGrade: String = ""  // e.g. 5W-30
 ) {
     fun toJson() = JSONObject().apply {
         put("id", id); put("car", carId); put("date", date); put("km", km)
         put("desc", desc); put("cost", cost)
         put("items", JSONArray(items)); put("photo", photo ?: "")
+        put("oilName", oilName); put("oilGrade", oilGrade)
     }
 
     companion object {
@@ -121,7 +124,9 @@ data class Entry(
                 desc = o.optString("desc"),
                 cost = o.optDouble("cost", 0.0),
                 items = (0 until arr.length()).map { arr.getString(it) },
-                photo = o.optString("photo", "").ifEmpty { null }
+                photo = o.optString("photo", "").ifEmpty { null },
+                oilName = o.optString("oilName", ""),
+                oilGrade = o.optString("oilGrade", "")
             )
         }
     }

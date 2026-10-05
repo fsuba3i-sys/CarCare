@@ -132,7 +132,7 @@ object Xlsx {
         val rows = mutableListOf<List<Any>>()
         rows += listOf(
             ctx.getString(R.string.col_car), ctx.getString(R.string.col_date), ctx.getString(R.string.col_km),
-            ctx.getString(R.string.col_desc), ctx.getString(R.string.col_items), ctx.getString(R.string.col_cost)
+            ctx.getString(R.string.col_desc), ctx.getString(R.string.col_items), ctx.getString(R.string.col_oil), ctx.getString(R.string.col_cost)
         )
         Store.allEntries(ctx)
             .sortedWith(compareBy<Entry>({ cars[it.carId]?.name ?: "" }, { it.date }))
@@ -143,6 +143,7 @@ object Xlsx {
                     e.km,
                     e.desc,
                     e.items.joinToString("، ") { Reference.itemName(ctx, it) },
+                    listOf(e.oilName, e.oilGrade).filter { it.isNotEmpty() }.joinToString(" "),
                     e.cost
                 )
             }
@@ -151,7 +152,7 @@ object Xlsx {
         sheet.append("""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>""")
         sheet.append("""<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">""")
         if (ctx.isArabic()) sheet.append("""<sheetViews><sheetView rightToLeft="1" workbookViewId="0"/></sheetViews>""")
-        sheet.append("""<cols><col min="1" max="1" width="18" customWidth="1"/><col min="2" max="3" width="13" customWidth="1"/><col min="4" max="5" width="40" customWidth="1"/><col min="6" max="6" width="12" customWidth="1"/></cols>""")
+        sheet.append("""<cols><col min="1" max="1" width="18" customWidth="1"/><col min="2" max="3" width="13" customWidth="1"/><col min="4" max="5" width="40" customWidth="1"/><col min="6" max="6" width="20" customWidth="1"/><col min="7" max="7" width="12" customWidth="1"/></cols>""")
         sheet.append("<sheetData>")
         rows.forEachIndexed { r, row ->
             sheet.append("""<row r="${r + 1}">""")
